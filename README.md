@@ -1,3 +1,9 @@
+## You can watch the presentation on the youtube
+
+[![IMAGE ALT TEXT](https://i.ytimg.com/vi/QAdOTHz72t8/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1a-gMfQYZMsZUJT1p9M47Yjw-3g)](https://www.youtube.com/watch?v=QAdOTHz72t8&t=1 "Bot Framework Composer ve LUIS & QnA Fundamentals - Derya Dok ve Emre Ergor")
+
+
+
 # Manually provision resources and publish a bot to Azure (_Preview_)
 
 This article covers script-based instructions to manually provision resources and publish a bot built using Composer to _Azure Web App (Preview)_ and _Azure Functions (Preview)_.
