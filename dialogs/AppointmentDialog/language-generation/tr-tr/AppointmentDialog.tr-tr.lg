@@ -1,0 +1,12 @@
+[import](common.lg)
+
+# TextInput_Prompt_S6COMh()
+- Size nasıl yardımcı olabilirim?
+# SendActivity_CEKUbq()
+- date: ${user.date}/ positive: ${user.positive}/ negative: ${user.negative}
+# SendActivity_yX6d8C()
+- ${user.date}'teki randevunuzu oluşturabilmem için doktor seçmeniz gerekiyor.
+# SendActivity_lPPKaC()
+- ${user.date}'teki randevunuzu iptal ettim.
+# SendActivity_rMAgnd()
+- Üzgünüm yardımcı olamıyorum.

@@ -1,0 +1,127 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "iiqwUz",
+    "name": "AppointmentDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "IuOipW"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "S6COMh"
+          },
+          "disabled": false,
+          "maxTurnCount": 1,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${TextInput_Prompt_S6COMh()}",
+          "property": "user.answer"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "eFg3ms",
+        "name": "Appointment"
+      },
+      "intent": "Appointment",
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "edWdJK"
+          },
+          "assignments": [
+            {
+              "property": "user.date",
+              "value": "=@date"
+            },
+            {
+              "property": "user.positive",
+              "value": "=@positive"
+            },
+            {
+              "property": "user.negative",
+              "value": "=@negative"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "CEKUbq"
+          },
+          "activity": "${SendActivity_CEKUbq()}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Is3lgh"
+          },
+          "condition": "=toLower(user.positive, \"tr-TR\") == \"almak\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "yX6d8C"
+              },
+              "activity": "${SendActivity_yX6d8C()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "DRhGve"
+              },
+              "activityProcessed": true,
+              "dialog": "DoctorDialog"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "9SGBPk"
+              },
+              "condition": "=toLower(user.negative, \"tr-TR\")",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "lPPKaC"
+                  },
+                  "activity": "${SendActivity_lPPKaC()}"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "rMAgnd"
+                  },
+                  "activity": "${SendActivity_rMAgnd()}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "AppointmentDialog.lg",
+  "recognizer": "AppointmentDialog.lu.qna",
+  "id": "AppointmentDialog"
+}

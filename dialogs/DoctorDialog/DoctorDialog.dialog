@@ -1,0 +1,68 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "R615HR",
+    "name": "DoctorDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "FPfAHG"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "U1Mwkr"
+          },
+          "method": "GET",
+          "url": "https://dummy.restapiexample.com/api/v1/employees",
+          "headers": {},
+          "resultProperty": "dialog.apiResult"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "ZXzqEY"
+          },
+          "condition": "=dialog.apiResult.statusCode == 200",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "cfV2Bn"
+              },
+              "activity": "${SendActivity_cfV2Bn()}"
+            }
+          ],
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "QylQa6"
+              },
+              "property": "user.infoList",
+              "value": "=dialog.apiResult.content.data"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "DalH6A"
+              },
+              "activity": "${SendActivity_DalH6A()}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "DoctorDialog.lg",
+  "recognizer": "DoctorDialog.lu.qna",
+  "id": "DoctorDialog"
+}

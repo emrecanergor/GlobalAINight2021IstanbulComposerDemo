@@ -1,0 +1,10 @@
+{
+  "AppointmentDialog.tr-tr": {
+    "rootDialog": false,
+    "triggers": {
+      "Appointment": [
+        "DoctorDialog.tr-tr"
+      ]
+    }
+  }
+}

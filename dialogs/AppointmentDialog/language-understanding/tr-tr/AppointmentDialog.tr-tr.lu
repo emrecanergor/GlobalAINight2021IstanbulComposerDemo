@@ -1,0 +1,7 @@
+
+# Appointment
+-{date = yarın} için doktor randevusu {positive = almak} istiyorum
+-{date = pazartesi} {hour = 2}'de doktor randevusu {positive = almak} istiyorum
+-{date = haftaya salı} olan randevumu {negative = iptal} edicem 
+-{date = gelecek ayki} randevumu {negative = iptal} et 
+-{date = yarınki} randevumu {negative = iptal} et

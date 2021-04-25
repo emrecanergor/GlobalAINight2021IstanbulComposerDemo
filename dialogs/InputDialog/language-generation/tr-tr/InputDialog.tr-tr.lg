@@ -1,0 +1,11 @@
+[import](common.lg)
+
+# TextInput_Prompt_sxirIm()
+[Activity
+    Text = Adın nedir?
+]
+
+# SendActivity_sdX0sB()
+[Activity
+    Text = Adın: ${dialog.username}
+]

@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_DoctorDialog",
+  "applicationId": "=settings.luis.DoctorDialog_tr_tr_lu.appId",
+  "version": "=settings.luis.DoctorDialog_tr_tr_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

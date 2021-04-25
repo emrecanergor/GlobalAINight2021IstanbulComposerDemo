@@ -1,0 +1,50 @@
+[import](common.lg)
+
+# SendActivity_cfV2Bn()
+[Activity
+    Text = işlem başarısız
+]
+
+# SendActivity_DalH6A()
+- ${DoctorCard()}
+
+# DoctorCard
+[Activity
+	AttachmentLayout = carousel
+    Attachments = ${foreach(user.infoList, userInfo, json(DoctorCardAdaptive(userInfo)))}
+    ]
+
+# DoctorCardAdaptive(userInfo)
+-```
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "Image",
+            "url": "https://thumbs.dreamstime.com/b/black-solid-icon-employee-applicant-man-logo-symbol-146530494.jpg"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Adı: ${userInfo.employee_name}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Yaş: ${userInfo.employee_age}",
+            "wrap": true
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "title": "${userInfo.employee_name}",
+                    "url": "https://dummy.restapiexample.com/api/v1/employee/${userInfo.id}"
+                }
+            ]
+        }
+    ]
+}
+```

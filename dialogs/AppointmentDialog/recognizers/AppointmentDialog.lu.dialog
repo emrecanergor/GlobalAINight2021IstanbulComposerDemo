@@ -1,0 +1,7 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_AppointmentDialog",
+  "recognizers": {
+    "tr-tr": "AppointmentDialog.tr-tr.lu"
+  }
+}

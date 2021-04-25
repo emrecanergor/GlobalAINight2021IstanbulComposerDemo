@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_AppointmentDialog",
+  "applicationId": "=settings.luis.AppointmentDialog_tr_tr_lu.appId",
+  "version": "=settings.luis.AppointmentDialog_tr_tr_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}
